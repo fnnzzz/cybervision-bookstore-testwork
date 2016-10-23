@@ -1,10 +1,11 @@
-import { GET_ALL_DATA } from 'constants/actionTypes'
+import { GET_ALL_DATA, GET_AUTHOR_DETAILS } from 'constants/actionTypes'
 
 
 const initState = {
     books: null,
     authors: null,
-    genres: null
+    genres: null,
+    authorDetails: null
 };
 
 export default function checkApp(state = initState, action) {
@@ -22,6 +23,26 @@ export default function checkApp(state = initState, action) {
                 books: false,
                 authors: false,
                 genres: false
+            }
+
+        case `${GET_AUTHOR_DETAILS}_FULFILLED`:
+            return {
+                ...state,
+                authorDetails: {
+                    ...action.payload
+                }
+            }
+
+        case `${GET_AUTHOR_DETAILS}_REJECTED`:
+            return {
+                ...state,
+                authorDetails: false
+            }
+
+        case `${GET_AUTHOR_DETAILS}_CLEAR`:
+            return {
+                ...state,
+                authorDetails: null
             }
 
         default:

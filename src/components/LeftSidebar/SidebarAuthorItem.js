@@ -21,14 +21,14 @@ export default class SidebarAuthorItem extends Component {
 		this.findRelatedBooks();
 	}
 
-	componentWillReceiveProps(nextProps) {
+	componentWillReceiveProps() {
 		this.findRelatedBooks();	
 	}
 
 	findRelatedBooks() {
 		const { books, id } = this.props;
 
-		Object.keys(books).map((b, index) => {
+		Object.keys(books).map((b) => {
 
 			// search related book to author
 			// and push their id to array
@@ -55,7 +55,7 @@ export default class SidebarAuthorItem extends Component {
 						primaryText="Книги этого автора"
 						rightIcon={<ArrowDropRight />}
 						menuItems={
-							this.relatedBooks.map((o, index) => {
+							this.relatedBooks.map((o) => {
 								return (
 									<Link to={ `/book/${o}` }>
 										<MenuItem primaryText={books[o].name} />

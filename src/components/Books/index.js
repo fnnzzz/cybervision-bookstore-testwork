@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Helmet from 'react-helmet';
 import { browserHistory } from 'react-router'
 import LeftSidebar from 'components/LeftSidebar'
 import BookItem from './BookItem'
@@ -26,8 +27,16 @@ class BooksListPage extends Component {
 			return false;
 		}	
 
+		let pageTitle;
+
+		{ !genreId && !authorId ? pageTitle = "bookZ — все книги" : null }
+		{ genreId ? pageTitle = `bookZ — книги по жанру "${genres[parseInt(genreId)].name}"` : null }
+		{ authorId ? pageTitle = `bookZ — книги по автору "${authors[parseInt(authorId)].name}"` : null }
+
 		return (
 			<section class="flexcontainer -row">
+
+				<Helmet title={pageTitle} />
 
 				<LeftSidebar 
 					authors={authors} 

@@ -16,6 +16,10 @@
 	&__detailscontainer {
 		@include display(flex);
 		@include flex-direction(row);
+
+		@media screen and (max-width: 900px) {
+			@include flex-direction(column);				
+		}
 	}
 
 	&__goback {
@@ -33,12 +37,26 @@
 			background-size: cover;
 			background-position: center center;
 			@include flex(1 0 200px);
+
+			@media screen and (max-width: 900px) {
+				& {
+					display: block;
+					margin: 50px auto;
+					@include flex(1 0 200px);
+				}
+			}
 		}
 		
 		&-rightblock {
 			padding: 10px 50px;
 			@include flex(0 1 100%);
 			// outline: 1px solid red;
+			// 
+			@media screen and (max-width: 900px) {
+				& {
+					padding: 10px 10px;
+				}
+			}
 		}
 
 		&-name {

@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { getAllData } from 'actions/app'
+import { getAllData, getAuthorDetails, clearAuthorsDetails } from 'actions/app'
 
 
 import AuthorDetailsPage from 'components/Author'
@@ -21,11 +21,14 @@ function mapStateToProps(state) {
 		books: state.app.books,
 		authors: state.app.authors,
 		genres: state.app.genres,
+		authorDetails: state.app.authorDetails
 	}
 }
 
 function mapDispatchToProps(dispatch) {
 	return {
+		getAuthorDetails: bindActionCreators(getAuthorDetails, dispatch),
+		clearAuthorsDetails: bindActionCreators(clearAuthorsDetails, dispatch),
 		getAllData: bindActionCreators(getAllData, dispatch)
 	}
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link, browserHistory } from 'react-router'
-
+import Helmet from 'react-helmet'
 
 
 // material ui
@@ -16,7 +16,7 @@ class BookDetailsPage extends Component {
 
 	componentWillMount() {
 
-		const bookId = this.context.routeParams.bookId;
+		// const bookId = this.context.routeParams.bookId;
 
 		if( this.props.books === null ) {
 			this.props.getAllData();
@@ -66,6 +66,9 @@ class BookDetailsPage extends Component {
 
 		return (
 			<div class="bookpage__container">
+
+				<Helmet title={ `bookZ — "${book.name}" (${book.year}) ` } /> 
+
 				<Paper className="bookpage__paper" zDepth={2}>
 					
 					<h1 class="bookpage__booktitle">

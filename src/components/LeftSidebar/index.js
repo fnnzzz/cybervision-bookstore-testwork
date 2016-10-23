@@ -25,6 +25,7 @@ export default class LeftSidebar extends Component {
 							<h3 class="leftsidebar__title">Авторы:</h3>
 
 							<ul class="leftsidebar__list">
+								<li><Link to="/">— Все авторы —</Link></li>
 								{
 									Object.keys(authors).map((a, index) => {
 										return (
@@ -45,7 +46,7 @@ export default class LeftSidebar extends Component {
 							<h3 class="leftsidebar__title">Жанры:</h3>
 							
 							<ul class="leftsidebar__list">
-								<li><Link to="/">Все жанры</Link></li>
+								<li><Link to="/">— Все жанры —</Link></li>
 								{
 									Object.keys(genres).map((g, index) => {
 										return (
