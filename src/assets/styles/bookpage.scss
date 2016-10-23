@@ -1,0 +1,108 @@
+@import "bourbon/bourbon";
+
+
+.bookpage {
+	&__container {
+		width: 80%;
+		margin: 50px auto;
+	}
+
+	&__paper {
+		padding: 40px;
+		position: relative;
+	}
+	
+	&__goback {
+		display: inline-block;
+		margin-right: 20px;
+		@include transition(all 0.4s ease);
+		
+		&:hover {
+			@include transition(all 0.4s ease);
+			@include transform(translateX(-5px))
+		}
+	}
+
+	&__flexwrap {
+		@include display(flex);
+		@include flex-direction(row);
+
+		@media screen and (max-width: 800px) {
+			& {
+				@include flex-direction(column);				
+			}
+		} 
+	}
+
+	&__booktitle {
+		font-size: 30px;
+		margin: 20px 0;
+		color: #607D8B;
+	}
+
+	&__leftwrap {
+		// width: 40%;
+		@include flex(0 1 30%);
+
+		@media screen and (max-width: 800px) {
+			@include flex(0 1 100%);			
+		}
+
+		&-pic {
+			max-width: 100%;
+			width: 100%;
+
+			@media screen and (max-width: 800px) {
+				& {
+					display: block;
+					margin: 0 auto;
+					width: 50%;
+					max-width: 50%;
+				}
+			}
+		}
+	}
+
+	&__rightwrap {
+		@include flex(1 100%);
+		padding: 40px;
+
+		&-item {
+			font-size: 17px;
+			color: #607D8B;
+			margin: 10px 0;
+		}
+
+		&-description {
+			margin-top: 30px;
+			color: #555;
+			font-size: 15px;
+		}
+
+		&-link {
+			
+			&, & a {
+				color: #9E9E9E;
+			}	
+		
+			&:first-child:before {
+				content: '';
+				margin-left: 10px;
+			}
+
+			&:not(:last-child):after {
+				content: ", ";
+			}
+
+			& a {
+				border-bottom: 1px dotted #9E9E9E;
+				@include transition(all 0.4s ease);
+
+				&:hover {
+					@include transition(all 0.4s ease);
+					border: none;
+				}
+			}
+		}
+	}
+}

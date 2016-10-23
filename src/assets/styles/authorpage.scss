@@ -1,0 +1,69 @@
+@import "bourbon/bourbon";
+
+
+.authorpage {
+	&__wrapper {
+		width: 85%;
+		margin: 50px auto;
+	}
+
+	&__paper {
+		width: 100%;
+		padding: 60px 50px;
+		position: relative;
+	}
+
+	&__detailscontainer {
+		@include display(flex);
+		@include flex-direction(row);
+	}
+
+	&__goback {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+	}
+
+	&__details {
+		&-photo {
+			box-shadow: 0 0 10px 0 #999;
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			background-size: cover;
+			background-position: center center;
+			@include flex(1 0 200px);
+		}
+		
+		&-rightblock {
+			padding: 10px 50px;
+			@include flex(0 1 100%);
+			// outline: 1px solid red;
+		}
+
+		&-name {
+			font-size: 40px;
+			color: #666;
+		}
+
+		&-descr {
+			margin: 20px 0;
+			line-height: 21px;
+			font-size: 15px;
+			color: #888;
+		}
+	}
+
+	&__authorbooks {
+		&-title {
+			color: #666;
+			font-size: 25px;
+			margin: 30px 0;
+		}
+
+		&-container {
+			@include display(flex);
+			@include flex-flow(row wrap);
+		}
+	}
+}
