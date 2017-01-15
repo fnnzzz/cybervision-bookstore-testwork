@@ -1,6 +1,4 @@
-# BookStore on React+Redux [ CyberVision test work ]
-
-Livedemo is [HERE](http://46.101.241.90/)
+# BookStore on React+Redux
 
 ***
 ## Toolchain:
